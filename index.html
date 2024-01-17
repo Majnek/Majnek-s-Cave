@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaskinia Majneksa</title>
+    <title>Minka's Cave</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <style>
         body {
@@ -11,7 +11,6 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            cursor: none;
             background-color: #0c0c0c; /* Dark background */
             color: #ccc; /* Light text */
             transition: background-color 0.5s, color 0.5s;
@@ -61,17 +60,6 @@
             width: 100%;
             bottom: 0;
             border-top: 5px solid #004d00;
-        }
-
-        .cursor {
-            position: absolute;
-            background-color: #008000;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: background-color 0.5s;
         }
 
         .language-slider {
@@ -134,24 +122,48 @@
         input {
             display: none;
         }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .external-link {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Jaskinia Majneksa</h1>
+        <h1>Minka's Cave</h1>
     </header>
 
-    <section onmousemove="moveCursor(event)">
-        <h2>Witaj w Jaskini Majneksa!</h2>
-        <p>Odkrywaj i poznawaj cuda Jaskini Majneksa.</p>
-
-        <!-- Custom green cursor following mouse animation -->
-        <div class="cursor"></div>
-
+    <section>
+        <h2>Welcome to Minka's Cave!</h2>
+        <p>Explore and discover the wonders of Minka's Cave.</p>
     </section>
 
     <footer>
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@jabanyMajneg" target="_blank">TikTok</a>
+            <a href="https://twitter.com/prawdiziwymajneg" target="_blank">Twitter</a>
+            <a href="https://www.youtube.com/user/totalny_minek" target="_blank">YouTube</a>
+        </div>
+
         <div class="language-slider">
             <div class="dark-mode-toggle">
                 <input type="checkbox" id="darkModeToggle" checked>
@@ -161,16 +173,16 @@
                 <input type="checkbox" id="languageSwitch" onchange="toggleLanguage()">
             </label>
         </div>
-        <p>&copy; 2024 Jaskinia Majneksa. Wszelkie prawa zastrzeżone.</p>
+        <p>&copy; 2024 Minka's Cave. All rights reserved.</p>
+
+        <div class="external-link">
+            <a href="https://R74n.com/" target="_blank">
+                <img src="https://R74n.com/icons/70x70.png" alt="R74n" width="35" height="35">
+            </a>
+        </div>
     </footer>
 
     <script>
-        function moveCursor(event) {
-            const cursor = document.querySelector('.cursor');
-            cursor.style.left = event.clientX + 'px';
-            cursor.style.top = event.clientY + 'px';
-        }
-
         function toggleLanguage() {
             const currentLang = document.documentElement.lang;
             const newLang = currentLang === 'pl' ? 'en' : 'pl';
@@ -180,4 +192,3 @@
 
 </body>
 </html>
-
