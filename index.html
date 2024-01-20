@@ -144,6 +144,30 @@
         .external-link {
             margin-top: 20px;
         }
+
+        /* Added styles for website pinger and MP3 player sections */
+        #website-pinger,
+        #mp3-player {
+            background-color: #333;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        #websiteUrl {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #pingResult {
+            font-weight: bold;
+        }
+
+        audio {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -155,6 +179,21 @@
     <section>
         <h2>Welcome to Majnek's Cave!</h2>
         <p>Here, You Can Find My Socials! I Will Be Adding Easter Eggs Here! (:.</p>
+    </section>
+
+    <section id="website-pinger">
+        <h2>Website Pinger</h2>
+        <input type="text" id="websiteUrl" placeholder="Enter website URL">
+        <button onclick="pingWebsite()">Ping</button>
+        <p id="pingResult"></p>
+    </section>
+
+    <section id="mp3-player">
+        <h2>MP3 Player</h2>
+        <audio controls>
+            <source src="your-audio-file.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </section>
 
     <footer>
@@ -177,17 +216,31 @@
         </div>
         <p>&copy; 2024 Majnek's Cave. All rights reserved.</p>
         
-<a href="https://majnek.github.io/Majnek-s-Cave/" target="_blank">
-    <img src="https://i.imgur.com/d7Kyaui.gif" alt="Button Image" style="cursor: pointer;">
-</a>
-        </div>
+        <a href="https://majnek.github.io/Majnek-s-Cave/" target="_blank">
+            <img src="https://i.imgur.com/d7Kyaui.gif" alt="Button Image" style="cursor: pointer;">
+        </a>
     </footer>
 
     <script>
+        // Your existing script content
         function toggleLanguage() {
             const currentLang = document.documentElement.lang;
             const newLang = currentLang === 'pl' ? 'en' : 'pl';
             document.documentElement.lang = newLang;
+        }
+
+        // Website Pinger JavaScript function
+        function pingWebsite() {
+            const websiteUrl = document.getElementById('websiteUrl').value;
+            const pingResultElement = document.getElementById('pingResult');
+            
+            pingResultElement.innerText = `Pinging ${websiteUrl}...`;
+
+            // Simulating a delay for demonstration purposes
+            setTimeout(() => {
+                // Replace the following line with your actual ping logic
+                pingResultElement.innerText = `${websiteUrl} is reachable.`;
+            }, 2000);
         }
     </script>
 
